@@ -1,31 +1,18 @@
 import {
-  Column,
-  CreateDateColumn,
   Entity,
-  JoinTable,
   ManyToMany,
   PrimaryGeneratedColumn,
+  CreateDateColumn,
   UpdateDateColumn,
 } from 'typeorm'
-
 import { Game } from '../../games/entities/Game'
 
-@Entity('users')
-export class User {
+@Entity('orders')
+export class Order {
   @PrimaryGeneratedColumn('uuid')
   id: string
 
-  @Column()
-  first_name: string
-
-  @Column()
-  last_name: string
-
-  @Column()
-  email: string
-
-  @ManyToMany(() => Game, game => game.users)
-  @JoinTable()
+  @ManyToMany(() => Game)
   games: Game[]
 
   @CreateDateColumn()
