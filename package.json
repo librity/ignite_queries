@@ -1,11 +1,12 @@
 {
-  "name": "desafio01",
+  "name": "ignite_queries",
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
   "scripts": {
     "lint:fix": "eslint --fix src --ext ts,tsx",
-    "test": "jest"
+    "test": "jest",
+    "typeorm": "ts-node ./node_modules/typeorm/cli.js"
   },
   "devDependencies": {
     "@types/jest": "^26.0.21",
